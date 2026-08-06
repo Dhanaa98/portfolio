@@ -1,0 +1,216 @@
+/* ============================================================
+   LAYOUT SHELL
+   Fixed top navbar + a single centered content column.
+   ============================================================ */
+
+.content {
+	max-width: calc(var(--maxw-content) + var(--gutter) * 2);
+	margin: 0 auto;
+	padding-top: 76px; /* clears fixed navbar */
+}
+
+/* ---------------- NAVBAR ---------------- */
+.navbar {
+	position: fixed;
+	top: 0; left: 0; right: 0;
+	z-index: 100;
+	background: transparent;
+	border-bottom: 1px solid transparent;
+	transition: background .3s var(--ease), border-color .3s var(--ease);
+}
+
+.navbar.scrolled {
+	background: var(--scrim);
+	backdrop-filter: blur(14px);
+	-webkit-backdrop-filter: blur(14px);
+	border-bottom-color: var(--ink-line);
+}
+
+.navbar-inner {
+	max-width: calc(var(--maxw-content) + var(--gutter) * 2);
+	margin: 0 auto;
+	padding: 0 var(--gutter);
+	height: 68px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+}
+
+.navbar-brand {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-family: var(--font-display);
+	font-weight: 600;
+	font-size: .95rem;
+	white-space: nowrap;
+}
+.navbar-brand .mark {
+	font-family: var(--font-mono);
+	font-size: .78rem;
+	color: var(--signal);
+	border: 1px solid var(--ink-line-strong);
+	border-radius: var(--r-sm);
+	padding: 3px 7px;
+}
+
+.navbar-links {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	flex: 1;
+	justify-content: center;
+}
+.navbar-links-rail {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+.navbar-links a {
+	position: relative;
+	z-index: 1;
+	font-family: var(--font-mono);
+	font-size: .82rem;
+	color: var(--text-dim);
+	padding: 8px 13px;
+	border-radius: var(--r-sm);
+	transition: color .2s var(--ease);
+}
+.navbar-links a:hover { color: var(--text); }
+.navbar-links a.active { color: var(--signal); }
+
+.navbar-active-pill {
+	position: absolute;
+	z-index: 0;
+	background: var(--surface);
+	border-radius: var(--r-sm);
+	pointer-events: none;
+}
+
+.navbar-links-socials { display: none; }
+
+.navbar-tools { display: flex; align-items: center; gap: 8px; }
+
+.theme-btn {
+	position: relative;
+	width: 36px; height: 36px;
+	display: grid; place-items: center;
+	border-radius: var(--r-sm);
+	border: 1px solid var(--ink-line);
+	color: var(--text-dim);
+	font-size: .84rem;
+	transition: color .2s var(--ease), border-color .2s var(--ease);
+}
+.theme-btn:hover { color: var(--text); border-color: var(--ink-line-strong); }
+
+.theme-btn-icon { display: grid; place-items: center; }
+
+.navbar-toggle {
+	position: relative;
+	display: none;
+}
+
+/* ---------------- SECTIONS ---------------- */
+.section {
+	padding: 88px var(--gutter);
+	border-bottom: 1px solid var(--ink-line);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	scroll-snap-align: start;
+	scroll-margin-top: 68px; /* fixed navbar height */
+}
+.section:last-of-type { border-bottom: none; }
+
+/* content-heavy sections shouldn't force vertical centering —
+   let them start at the top like a normal page instead */
+.section.intro,
+#projects.section,
+#education.section {
+	justify-content: flex-start;
+}
+
+/* sparse sections (single job, few certs) get a shorter minimum
+   height instead of stretching to fill 100vh with empty space */
+#experience.section,
+#certifications.section {
+	min-height: 0;
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+
+.section-head { margin-bottom: 40px; width: 100%; }
+.section-head h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-top: 10px; }
+
+.progress-rule {
+	position: fixed; top: 0; left: 0; height: 2px; width: 100%;
+	transform-origin: 0 50%; transform: scaleX(0);
+	background: var(--signal);
+	z-index: 200;
+}
+
+.scroll-top {
+	position: fixed;
+	right: max(24px, 3vw);
+	bottom: max(24px, 3vw);
+	z-index: 90;
+	width: 44px; height: 44px;
+	display: grid; place-items: center;
+	border-radius: 50%;
+	border: 1px solid var(--ink-line-strong);
+	background: var(--ink-raised);
+	color: var(--text-dim);
+	box-shadow: var(--shadow);
+	transition: color .2s var(--ease), border-color .2s var(--ease);
+}
+.scroll-top:hover { color: var(--signal); border-color: var(--signal); }
+.scroll-top-icon { transform: rotate(-90deg); }
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 860px) {
+	.navbar-links {
+		position: fixed;
+		inset: 68px 0 0 auto;
+		width: min(78vw, 320px);
+		height: calc(100vh - 68px);
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: flex-start;
+		gap: 2px;
+		padding: 22px;
+		background: var(--scrim);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
+		border-left: 1px solid var(--ink-line);
+		transform: translateX(100%);
+		transition: transform .35s var(--ease);
+		overflow-y: auto;
+	}
+	.navbar-links.open { transform: none; box-shadow: var(--shadow); }
+	.navbar-links-rail { flex-direction: column; align-items: stretch; gap: 2px; width: 100%; }
+	.navbar-links a { padding: 13px 14px; font-size: .95rem; }
+	.navbar-links-socials {
+		display: flex; gap: 8px; margin-top: 16px; padding-top: 16px;
+		border-top: 1px solid var(--ink-line);
+	}
+	.navbar-links-socials a {
+		width: 36px; height: 36px; display: grid; place-items: center;
+		border-radius: var(--r-sm); color: var(--text-dim);
+	}
+	.navbar-toggle {
+		display: grid; place-items: center;
+		width: 36px; height: 36px;
+		border: 1px solid var(--ink-line); border-radius: var(--r-sm); color: var(--text);
+	}
+	.brand-name { display: none; }
+	.section { padding: 64px var(--gutter-sm); }
+}
+
+@media (max-width: 560px) {
+	.section { padding: 52px 18px; }
+	.navbar-inner { padding: 0 18px; }
+}

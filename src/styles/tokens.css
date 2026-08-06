@@ -1,0 +1,87 @@
+/* ============================================================
+   DESIGN TOKENS
+   Ground: cool graphite (dark) or soft graphite-tinted paper (light).
+   One accent: desaturated cyan-teal, used sparingly.
+   No gradients as a decorative default — flat color, real contrast.
+   ============================================================ */
+
+:root {
+	/* ---- typography ---- */
+	--font-display: 'Space Grotesk', system-ui, sans-serif;
+	--font-body: 'Inter', system-ui, sans-serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+
+	/* ---- accent: cyan-teal — dark/light values differ so text use hits 4.5:1 ---- */
+	--signal: #3fb8bd;
+	--signal-dim: #2f9599;
+	--signal-ink: #08201f; /* accent-on-light text pairing */
+
+	/* ---- layout ---- */
+	--rail-w: 340px;
+	--maxw-content: 760px;
+	--gutter: 48px;
+	--gutter-sm: 24px;
+	--ease: cubic-bezier(.19,1,.22,1);
+	--ease-snap: cubic-bezier(.65,0,.35,1);
+
+	/* ---- radius: sharp, not "rounded-lg everywhere" ---- */
+	--r-sm: 3px;
+	--r-md: 6px;
+}
+
+/* ---------------- DARK (default) ---------------- */
+:root,
+:root[data-theme="dark"] {
+	--ink: #0c1012;
+	--ink-raised: #141a1c;
+	--ink-media: #1a2124;
+	--ink-line: rgba(212,228,230,.10);
+	--ink-line-strong: rgba(212,228,230,.20);
+	--text: #e2ebec;
+	--text-dim: #82949a;
+	--text-faint: #76858b; /* raised from the previous token's value to clear 4.5:1 on --ink */
+	--surface: rgba(212,228,230,.035);
+	--surface-hover: rgba(212,228,230,.06);
+	--shadow: 0 24px 60px -24px rgba(0,0,0,.7);
+	--scrim: rgba(12,16,18,.86);
+}
+
+/* ---------------- LIGHT ---------------- */
+:root[data-theme="light"] {
+	--ink: #eef2f2;
+	--ink-raised: #ffffff;
+	--ink-media: #e1e8e8;
+	--ink-line: rgba(20,32,34,.11);
+	--ink-line-strong: rgba(20,32,34,.20);
+	--text: #131b1c;
+	--text-dim: #59696b;
+	--text-faint: #63716f; /* darkened from the raw palette value to clear 4.5:1 on --ink */
+	--surface: rgba(20,32,34,.03);
+	--surface-hover: rgba(20,32,34,.055);
+	--shadow: 0 24px 50px -26px rgba(14,24,26,.30);
+	--scrim: rgba(238,242,242,.88);
+	--signal: #177075; /* darker teal so text use (nav active, labels) clears 4.5:1 AA on light ground */
+	--signal-dim: #135a5e;
+	--signal-ink: #ffffff;
+}
+
+/* honor OS preference when no explicit choice has been made yet */
+@media (prefers-color-scheme: light) {
+	:root:not([data-theme]) {
+		--ink: #eef2f2;
+		--ink-raised: #ffffff;
+		--ink-media: #e1e8e8;
+		--ink-line: rgba(20,32,34,.11);
+		--ink-line-strong: rgba(20,32,34,.20);
+		--text: #131b1c;
+		--text-dim: #59696b;
+		--text-faint: #63716f;
+		--surface: rgba(20,32,34,.03);
+		--surface-hover: rgba(20,32,34,.055);
+		--shadow: 0 24px 50px -26px rgba(14,24,26,.30);
+		--scrim: rgba(238,242,242,.88);
+		--signal: #1f8f95;
+		--signal-dim: #17767b;
+		--signal-ink: #ffffff;
+	}
+}
