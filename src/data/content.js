@@ -147,7 +147,7 @@ export const PROJECTS = [
 	{ t: 'Coffee Sales Dashboard', cat: 'BI', stack: ['Excel'], img: 'coffee-sales-dashboard.png',
 	  d: 'Excel-only dashboard built directly from raw coffee sales order data, with no external BI tool in the pipeline.',
 	  url: 'https://github.com/Dhanaa98/Coffee-Sales-Dashboard' },
-	{ t: 'Marketing Analytics Scorecard', cat: 'Automation', stack: ['GA4 API', 'Google Ads API', 'Meta Graph API', 'Klaviyo', 'OpenAI'], img: null,
+	{ t: 'Marketing Analytics Scorecard', cat: 'Automation', stack: ['GA4 API', 'Google Ads API', 'Meta Graph API', 'Klaviyo API', 'OpenAI'], img: 'marketing-analytics-scorecard.png',
 	  d: "Replaced a manual, spreadsheet-based monthly report with a live marketing scorecard. Built the data layer - a daily cron job pulling and normalizing five live sources (GA4, Google Ads, Meta, Klaviyo) via their OAuth2 APIs - plus an OpenAI commentary generator drafting board-ready write-ups each month.",
 	  url: null },
 ];
