@@ -13,7 +13,7 @@ export const CERTIFICATIONS_SECTION_ID = 'certifications';
 export const ROLES = ['Data Scientist', 'Machine Learning Engineer', 'BI Developer', 'Automation Specialist'];
 
 export const SOCIALS = [
-	{ label: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/in/dhananjaya-mudunkotuwa-/' },
+	{ label: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/in/dhananjaya-mudunkotuwa' },
 	{ label: 'GitHub', icon: 'github', url: 'https://github.com/Dhanaa98' },
 	{ label: 'Instagram', icon: 'instagram', url: 'https://www.instagram.com/_dha.naa_/' },
 	{ label: 'Facebook', icon: 'facebook', url: 'https://web.facebook.com/dhananjaya.mudunkotuwa.9/' },
@@ -23,7 +23,7 @@ export const INFO = [
 	{ k: 'Email', v: 'dhananjayamudunkotuwa1998@gmail.com', href: 'mailto:dhananjayamudunkotuwa1998@gmail.com' },
 	{ k: 'Phone', v: '+94 76 250 7983', href: 'tel:+94762507983' },
 	{ k: 'Location', v: 'Colombo, Sri Lanka' },
-	{ k: 'LinkedIn', v: 'dhananjaya-mudunkotuwa', href: 'https://www.linkedin.com/in/dhananjaya-mudunkotuwa-/' },
+	{ k: 'LinkedIn', v: 'dhananjaya-mudunkotuwa', href: 'https://www.linkedin.com/in/dhananjaya-mudunkotuwa' },
 ];
 
 export const EXPERIENCE = [
@@ -87,28 +87,32 @@ export const CERTS = [
 ];
 
 export const PROJECTS = [
-	{ t: 'Sentiment Analysis (NLP)', cat: 'ML', stack: ['VADER', 'RoBERTa', 'Hugging Face'], img: 'sentiment-analysis.jpg',
+	{ t: 'HeyGreen: Voice Farm Assistant', cat: 'ML/DL', stack: ['openWakeWord', 'ONNX Runtime Web', 'AssemblyAI', 'FastAPI', 'Gemini'], img: 'heygreen.png',
+	  d: 'Say "Hey Green" and ask about the weather, what to plant, or a sick plant. I trained the wakeword model on real and synthetic voice clips, and it runs in the browser so no audio leaves the device until it fires. Weather, crop and plant-health agents share one farm state, so a wet forecast can shift a disease diagnosis and the crop advice follows. Built for the AssemblyAI Voice Agent Hackathon.',
+	  url: 'https://github.com/Dhanaa98/agri-voice-agent-hackathon',
+	  demo: 'https://agri-voice-agent-farmer.onrender.com' },
+	{ t: 'Sentiment Analysis (NLP)', cat: 'ML/DL', stack: ['VADER', 'RoBERTa', 'Hugging Face'], img: 'sentiment-analysis.jpg',
 	  d: 'Scored 10,000 Amazon food reviews with NLTK VADER and a pretrained RoBERTa model (cardiffnlp/twitter-roberta-base-sentiment) to see how much sentiment nuance a bag-of-words baseline actually misses.',
 	  url: 'https://github.com/Dhanaa98/Sentiment-Analysis-NLP' },
-	{ t: 'Multiple Disease Prediction WebApp', cat: 'ML', stack: ['Logistic Regression', 'Random Forest', 'Scikit-learn'], img: 'disease_test.png',
+	{ t: 'Multiple Disease Prediction WebApp', cat: 'ML/DL', stack: ['Logistic Regression', 'Random Forest', 'Scikit-learn'], img: 'disease_test.png',
 	  d: 'Streamlit web app predicting disease risk from patient features (age, BMI, blood pressure, glucose) across multiple conditions, comparing Logistic Regression against Random Forest for robustness.',
 	  url: 'https://github.com/Dhanaa98/Multiple-Diseases-Prediction-Web-App' },
-	{ t: 'Resume Parsing WebApp', cat: 'ML', stack: ['NLP', 'Scikit-learn', 'Streamlit'], img: 'resume.png',
+	{ t: 'Resume Parsing WebApp', cat: 'ML/DL', stack: ['NLP', 'Scikit-learn', 'Streamlit'], img: 'resume.png',
 	  d: 'Extracts text from PDF/DOCX resumes, matches skills against job descriptions with regex and CountVectorizer + cosine similarity, and surfaces the gap in a Streamlit interface.',
 	  url: 'https://github.com/Dhanaa98/Resume-Parsing-WebApp' },
-	{ t: 'Job Recruitment Prediction', cat: 'ML', stack: ['Random Forest', 'SVM', 'Scikit-learn'], img: 'recruitment2.jpg',
+	{ t: 'Job Recruitment Prediction', cat: 'ML/DL', stack: ['Random Forest', 'SVM', 'Scikit-learn'], img: 'recruitment2.jpg',
 	  d: 'Benchmarks Logistic Regression, Random Forest, Decision Tree and SVM on hiring-outcome data. Random Forest gave the best balance of accuracy and generalizability, while the Decision Tree showed clear overfitting.',
 	  url: 'https://github.com/Dhanaa98/Job-Recruitment-Prediction' },
-	{ t: 'Customer Segmentation (K-Means)', cat: 'ML', stack: ['K-Means', 'RFM', 'Scikit-learn'], img: 'customer-segmentation.png',
+	{ t: 'Customer Segmentation (K-Means)', cat: 'ML/DL', stack: ['K-Means', 'RFM', 'Scikit-learn'], img: 'customer-segmentation.png',
 	  d: 'Segments bank transaction customers into four behavioral clusters via K-Means on RFM (Recency, Frequency, Monetary) metrics, ranging from low-engagement to high-frequency, high-value groups.',
 	  url: 'https://github.com/Dhanaa98/Customer-Segmentation-through-K-Means-Clustering' },
-	{ t: 'Gold Price Forecasting', cat: 'ML', stack: ['Prophet', 'Time Series'], img: 'gold.jpg',
+	{ t: 'Gold Price Forecasting', cat: 'ML/DL', stack: ['Prophet', 'Time Series'], img: 'gold.jpg',
 	  d: 'Facebook Prophet model forecasting gold stock price from historical closing data, with trend and seasonality decomposition alongside the forecast bounds.',
 	  url: 'https://github.com/Dhanaa98/Gold-Price-Forecasting-with-Prophet' },
-	{ t: 'Sentiment Analysis with BERT', cat: 'ML', stack: ['BERT', 'Web Scraping'], img: 'yelp-sentiment.jpg',
+	{ t: 'Sentiment Analysis with BERT', cat: 'ML/DL', stack: ['BERT', 'Web Scraping'], img: 'yelp-sentiment.jpg',
 	  d: 'Scrapes live Yelp reviews with BeautifulSoup and scores them 1–5 stars using a pretrained multilingual BERT model (nlptown/bert-base-multilingual-uncased-sentiment).',
 	  url: 'https://github.com/Dhanaa98/Sentiment-Analysis-with-BERT' },
-	{ t: 'Weather Forecasting (NeuralProphet)', cat: 'ML', stack: ['NeuralProphet', 'Time Series'], img: 'weather.jpg',
+	{ t: 'Weather Forecasting (NeuralProphet)', cat: 'ML/DL', stack: ['NeuralProphet', 'Time Series'], img: 'weather.jpg',
 	  d: 'Trained NeuralProphet on historical Colombo weather data to forecast 900 days out, with trend and seasonality broken down for agriculture and energy-planning use cases.',
 	  url: 'https://github.com/Dhanaa98/Weather-Forecasting-with-NeuralProphet' },
 	{ t: 'Flight Satisfaction Survey', cat: 'Analysis', stack: ['Python', 'Pandas', 'Seaborn'], img: 'flight2.jpg',
@@ -152,4 +156,4 @@ export const PROJECTS = [
 	  url: null },
 ];
 
-export const FILTERS = ['All', 'ML', 'Analysis', 'BI', 'Automation'];
+export const FILTERS = ['All', 'ML/DL', 'Analysis', 'BI', 'Automation'];

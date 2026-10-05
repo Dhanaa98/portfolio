@@ -112,13 +112,20 @@ export default function Projects() {
 									<div className="proj-tags">
 										{p.stack.map(s => <span key={s} className="proj-tag">{s}</span>)}
 									</div>
-									{p.url ? (
-										<a className="proj-link" href={p.url} target="_blank" rel="noopener">
-											View on GitHub <Icon name="external" size={14} strokeOnly />
-										</a>
-									) : (
-										<span className="proj-link proj-link-static">Client project, code private</span>
-									)}
+									<div className="proj-links">
+										{p.demo && (
+											<a className="proj-link" href={p.demo} target="_blank" rel="noopener">
+												Live demo <Icon name="external" size={14} strokeOnly />
+											</a>
+										)}
+										{p.url ? (
+											<a className="proj-link" href={p.url} target="_blank" rel="noopener">
+												View on GitHub <Icon name="external" size={14} strokeOnly />
+											</a>
+										) : (
+											<span className="proj-link proj-link-static">Client project, code private</span>
+										)}
+									</div>
 								</div>
 							</TiltCard>
 						);
