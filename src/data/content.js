@@ -10,7 +10,11 @@ export const NAV = [
 /* certifications is still rendered as its own section, just not in the primary nav */
 export const CERTIFICATIONS_SECTION_ID = 'certifications';
 
-export const ROLES = ['Data Scientist', 'Machine Learning Engineer', 'BI Developer', 'Automation Specialist'];
+export const STATS = [
+	{ value: '25-30 hrs', label: 'of monthly manual reporting replaced by one automated scorecard (est.)' },
+	{ value: '4 sources', label: 'GA4, Google Ads, Meta and Klaviyo pulled into a single daily pipeline' },
+	{ value: '198 diseases', label: 'diagnosed by voice alone in HeyGreen, my wakeword-triggered farm agent' },
+];
 
 export const SOCIALS = [
 	{ label: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/in/dhananjaya-mudunkotuwa' },
@@ -88,7 +92,7 @@ export const CERTS = [
 
 export const PROJECTS = [
 	{ t: 'HeyGreen: Voice Farm Assistant', cat: 'ML/DL', stack: ['openWakeWord', 'ONNX Runtime Web', 'AssemblyAI', 'FastAPI', 'Gemini'], img: 'heygreen.webp',
-	  d: 'Say "Hey Green" and ask about the weather, what to plant, or a sick plant. I trained the wakeword model on real and synthetic voice clips, and it runs in the browser so no audio leaves the device until it fires. Weather, crop and plant-health agents share one farm state, so a wet forecast can shift a disease diagnosis and the crop advice follows. Built for the AssemblyAI Voice Agent Hackathon.',
+	  d: 'Say "Hey Green" and ask about the weather, what to plant, or a sick plant. I trained the wakeword model myself, and it runs in the browser so no audio leaves the device until it fires. Weather, crop and plant-health agents share one farm state. Built for the AssemblyAI Voice Agent Hackathon.',
 	  url: 'https://github.com/Dhanaa98/agri-voice-agent-hackathon',
 	  demo: 'https://agri-voice-agent-farmer.onrender.com' },
 	{ t: 'Sentiment Analysis (NLP)', cat: 'ML/DL', stack: ['VADER', 'RoBERTa', 'Hugging Face'], img: 'sentiment-analysis.webp',

@@ -134,6 +134,14 @@
 	justify-content: flex-start;
 }
 
+/* projects need room for three columns, so break out of the reading column */
+#projects.section {
+	max-width: 1180px;
+	width: 100vw;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+
 /* sparse sections (single job, few certs) get a shorter minimum
    height instead of stretching to fill 100vh with empty space */
 #experience.section,
