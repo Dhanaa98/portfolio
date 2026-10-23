@@ -87,7 +87,7 @@ export const CERTS = [
 
 export const PROJECTS = [
 	{ t: 'HeyGreen: Voice Farm Assistant', cat: 'ML/DL', stack: ['openWakeWord', 'ONNX Runtime Web', 'AssemblyAI', 'FastAPI', 'Gemini'], img: 'heygreen.webp',
-	  d: 'Say "Hey Green" and ask about the weather, what to plant, or a sick plant. I trained the wakeword model myself, and it runs in the browser so no audio leaves the device until it fires. Weather, crop and plant-health agents share one farm state. Built for the AssemblyAI Voice Agent Hackathon.',
+	  d: 'Say "Hey Green" and ask about the weather, what to plant, or a sick plant. The wakeword model is my own and runs in the browser, so no audio leaves the device until it fires. Weather, crop and plant-health agents share one farm state. Built for the AssemblyAI Voice Agent Hackathon.',
 	  url: 'https://github.com/Dhanaa98/agri-voice-agent-hackathon',
 	  demo: 'https://agri-voice-agent-farmer.onrender.com' },
 	{ t: 'Sentiment Analysis (NLP)', cat: 'ML/DL', stack: ['VADER', 'RoBERTa', 'Hugging Face'], img: 'sentiment-analysis.webp',

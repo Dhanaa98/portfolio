@@ -7,6 +7,7 @@ html {
 }
 
 body {
+	overflow-x: clip; /* clip, not hidden: keeps position: sticky working */
 	background: var(--ink);
 	color: var(--text);
 	font-family: var(--font-body);
