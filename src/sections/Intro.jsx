@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import Icon from '../components/Icon.jsx';
 import Magnetic from '../components/Magnetic.jsx';
-import { INFO, STATS } from '../data/content.js';
+import { INFO } from '../data/content.js';
 
 export default function Intro() {
 	const reduce = useReducedMotion();
@@ -43,18 +43,6 @@ export default function Intro() {
 							<Magnetic>Download CV</Magnetic>
 						</a>
 					</motion.div>
-
-					<motion.ul
-						className="intro-stats"
-						initial="hidden" whileInView="show" viewport={{ once: true }} custom={4.5} variants={v}
-					>
-						{STATS.map(st => (
-							<li key={st.label}>
-								<strong>{st.value}</strong>
-								<span>{st.label}</span>
-							</li>
-						))}
-					</motion.ul>
 
 					<motion.ul
 						className="intro-info"

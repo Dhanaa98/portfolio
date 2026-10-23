@@ -10,11 +10,6 @@ export const NAV = [
 /* certifications is still rendered as its own section, just not in the primary nav */
 export const CERTIFICATIONS_SECTION_ID = 'certifications';
 
-export const STATS = [
-	{ value: '25-30 hrs', label: 'of monthly manual reporting replaced by one automated scorecard (est.)' },
-	{ value: '4 sources', label: 'GA4, Google Ads, Meta and Klaviyo pulled into a single daily pipeline' },
-	{ value: '198 diseases', label: 'diagnosed by voice alone in HeyGreen, my wakeword-triggered farm agent' },
-];
 
 export const SOCIALS = [
 	{ label: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/in/dhananjaya-mudunkotuwa' },
