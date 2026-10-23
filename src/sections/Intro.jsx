@@ -95,7 +95,7 @@ export default function Intro() {
 					transition={{ duration: .7, ease: [0.19, 1, 0.22, 1], delay: .12 }}
 				>
 					<div className="intro-portrait">
-						<img src="/images/DhanaEdit.jpg" alt="Dhananjaya Mudunkotuwa" />
+						<img src="/images/DhanaEdit.webp" alt="Dhananjaya Mudunkotuwa" />
 					</div>
 				</motion.div>
 			</div>
